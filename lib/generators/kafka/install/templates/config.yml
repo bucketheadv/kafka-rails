@@ -1,12 +1,39 @@
 default: &default
+  client_id: 'my-client-id'
   host: 'localhost'
   port: 9092
 
-development:
+connection: &client
   <<: *default
+  partition: 0
+  strategy: :earliest_offset
+
+development:
+  consumers:
+    default:
+      <<: *client
+    connection1:
+      <<: *client
+  producers:
+    default:
+      <<: *default
 
 test:
-  <<: *default
+  consumers:
+    default:
+      <<: *client
+    connection1:
+      <<: *client
+  producers:
+    default:
+      <<: *default
 
 production:
-  <<: *default
+  consumers:
+    default:
+      <<: *client
+    connection1:
+      <<: *client
+  producers:
+    default:
+      <<: *default
