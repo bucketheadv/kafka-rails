@@ -5,7 +5,7 @@
 # Usage: Consumers::<%= class_name %>Consumer.new.run
 #
 class Consumers::<%= class_name %>Consumer < Kafka::Consumer
-  # Which connection, from the config in kafka.yml.
+  # Which connection, from the config in kafka.yml, default is ':default'
   # self.connection = :default
 
   # Change it to real topic name

@@ -5,7 +5,7 @@
 #  Usage: Producers::<%= class_name %>Producer.new.build_messages(['msg1', 'msg2']).deliver
 #
 class Producers::<%= class_name %>Producer < Kafka::Producer
-  # Which connection, from the config in kafka.yml
+  # Which connection, from the config in kafka.yml, default is ':default'
   # self.connection = :default
 
   # Change it to real topic name

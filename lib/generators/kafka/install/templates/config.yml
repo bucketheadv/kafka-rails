@@ -3,7 +3,7 @@ default: &default
   host: 'localhost'
   port: 9092
 
-connection: &client
+connection: &connection
   <<: *default
   partition: 0
   strategy: :earliest_offset
@@ -11,9 +11,7 @@ connection: &client
 development:
   consumers:
     default:
-      <<: *client
-    connection1:
-      <<: *client
+      <<: *connection
   producers:
     default:
       <<: *default
@@ -21,9 +19,7 @@ development:
 test:
   consumers:
     default:
-      <<: *client
-    connection1:
-      <<: *client
+      <<: *connection
   producers:
     default:
       <<: *default
@@ -31,9 +27,7 @@ test:
 production:
   consumers:
     default:
-      <<: *client
-    connection1:
-      <<: *client
+      <<: *connection
   producers:
     default:
       <<: *default

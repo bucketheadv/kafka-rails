@@ -1,8 +1,25 @@
 # Kafka::Rails
-Short description and motivation.
+This is a gem to integrate kafka in rails.
 
 ## Usage
-How to use my plugin.
+
+```bash
+rails g kafka:install kafka-rails
+```
+
+It will generate 2 files: `config/kafka.yml`, `config/initializers/kafka_rails.rb`.
+
+```bash
+rails g kafka:consumer users
+```
+
+It will generate the file: `app/kafkas/consumers/users_consumer.rb`.
+
+```bash
+rails g kafka:producer users
+```
+
+It will generate the file: `app/kafkas/producers/users_producer.rb`.
 
 ## Installation
 Add this line to your application's Gemfile:
